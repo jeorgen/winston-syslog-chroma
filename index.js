@@ -77,7 +77,7 @@ util._extend(SyslogTransport.prototype, {
             message = message.substring(maxLength);
         }
 
-        messages.push(prepend + message);
+        messages.push(message);
 
         var options = {
             cons: true,
