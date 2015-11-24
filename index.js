@@ -22,7 +22,7 @@ function formatMessage(message) {
         timestamp: Date.now() / 1000
     })
 
-    var cee =  {time: gelf.get('timestamp'), msg = gelf.getObject()}
+    var cee =  {time: gelf.get('timestamp'), msg: gelf.getObject()}
     return '@cee: ' + JSON.stringify(cee)
 }
 
