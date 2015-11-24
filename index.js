@@ -4,6 +4,21 @@ var winston = require('winston'),
     os = require('os'),
     JOT = require('javascript-object-templates');
 
+
+// var npmToSyslogLevels = { error: 3, warn: 4, info: 5, verbose: 6, debug: 7, silly: 7 }
+
+
+// For reference:
+//
+// sysLogLevels = {  0 :"Emergency: system is unusable",
+//             1 :"Alert: action must be taken immediately",
+//             2 :"Critical: critical conditions",
+//             3 :"Error: error conditions",
+//             4 :"Warning: warning conditions",
+//             5 :"Notice: normal but significant condition",
+//             6 :"Informational: informational messages",
+//             7 :"Debug: debug-level messages"}
+
 var messageTemplate = {
     "version": "1.1",
     "host": os.hostname(),
