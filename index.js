@@ -2,7 +2,7 @@ var winston = require('winston'),
     util = require('util'),
     posix = require('posix'),
     os = require('os'),
-    var JOT = require('javascript-object-templates');
+    JOT = require('javascript-object-templates');
 
 var messageTemplate = {
     "version": "1.1",
