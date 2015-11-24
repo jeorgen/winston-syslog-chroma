@@ -25,21 +25,15 @@ var messageTemplate = {
     "short_message": "",
     "full_message": "",
     "timestamp": 0.0,
-    "level": 3}
+    "level": 3
+}
 
 
-function escape (key, val) {
-    if (typeof(val)!="string") return val;
+function escape(key, val) {
+    if (typeof(val) != "string") return val
     return val
-      .replace(/[\"]/g, '\\"')
-      .replace(/[\\]/g, '\\\\')
-      .replace(/[\/]/g, '\\/')
-      .replace(/[\b]/g, '\\b')
-      .replace(/[\f]/g, '\\f')
-      .replace(/[\n]/g, '\\n')
-      .replace(/[\r]/g, '\\r')
-      .replace(/[\t]/g, '\\t')
-    ; 
+        .replace(/[\n]/g, '#012')
+        .replace(/[\r]/g, '#015')
 }
 
 function formatMessage(message) {
@@ -50,7 +44,10 @@ function formatMessage(message) {
         timestamp: Date.now() / 1000
     })
 
-    var cee =  {time: gelf.get('timestamp'), msg: gelf.getObject()}
+    var cee = {
+        time: gelf.get('timestamp'),
+        msg: gelf.getObject()
+    }
     return '@cee: ' + JSON.stringify(cee, escape)
 }
 
@@ -80,8 +77,7 @@ util._extend(SyslogTransport.prototype, {
             syslogSeverity = 'warning';
         } else if (level === 'trace') {
             syslogSeverity = 'debug';
-        }
-        else {
+        } else {
             syslogSeverity = 'debug';
         }
 
