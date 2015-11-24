@@ -11,7 +11,7 @@ var messageTemplate = {
     "full_message": "",
     "timestamp": 0.0,
     "level": 3,
-    "_sysinfo": [os.arch(), os.homedir(), os.hostname(), os.platform(), os.release(), os.type()]
+    "_sysinfo": [os.arch(), os.hostname(), os.platform(), os.release(), os.type()]
 }
 
 function formatMessage(message) {
