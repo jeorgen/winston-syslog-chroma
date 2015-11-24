@@ -10,9 +10,7 @@ var messageTemplate = {
     "short_message": "",
     "full_message": "",
     "timestamp": 0.0,
-    "level": 3,
-    "_sysinfo": [os.arch(), os.hostname(), os.platform(), os.release(), os.type()]
-}
+    "level": 3}
 
 function formatMessage(message) {
     var gelf = new JOT(messageTemplate)
