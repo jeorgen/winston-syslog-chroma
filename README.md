@@ -1,12 +1,8 @@
 # winston-syslog
 
 This is a transport for [winston](https://github.com/flatiron/winston) that logs to
-the syslog. It uses native [POSIX bindings](https://github.com/melor/node-posix) to
-write to the syslog; as such, it won't work on Windows, and OS X support hasn't really
-been tested. It definitely works on Linux.
-
-It's not on NPM, yet. This was originally part of another library but has since been
-factored out into its own module.
+the syslog in the GELF Format wrapped inside of a simplified CEE format. It uses native [POSIX bindings](https://github.com/melor/node-posix) to write to the syslog; as such, it won't work on Windows, and OS X support hasn't really
+been tested. It works on Linux.
 
 ## Usage
 
@@ -17,17 +13,16 @@ var winston = require('winston'),
 var logger = new winston.Logger({
 	transports: [
 		new SyslogTransport({
-			id: 'my sweet app',
-			facility: 'local0',
-			showPid: true
+			id: 'Some_String',
+			facility: 'user',
+			showPid: false
 		})
 	]
 });
 ```
 
 ## Caveats
-By hardcoded default, syslog does not allow messages over 1024 bytes. This transport
-will cut up messages longer than that into multiple messages.
+This transport will cut up messages longer than 20K into multiple messages.
 
 Also, `rsyslog` has a built-in rate limit of 200 messages over a period of 5 seconds
 from the same process. If you're doing more logging than that, you'll need to adjust
