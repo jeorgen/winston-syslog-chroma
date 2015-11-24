@@ -51,6 +51,9 @@ util._extend(SyslogTransport.prototype, {
         } else if (level === 'trace') {
             syslogSeverity = 'debug';
         }
+        else {
+            syslogSeverity = 'debug';
+        }
 
         var message = msg,
             prepend = '[' + level + '] ';
