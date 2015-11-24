@@ -62,7 +62,7 @@ util._extend(SyslogTransport.prototype, {
             message += ' ' + util.inspect(meta, false, null, false);
         }
 
-        message = message.replace(/\u001b\[(\d+(;\d+)*)?m/g, '');
+        // message = message.replace(/\u001b\[(\d+(;\d+)*)?m/g, '');
         message = formatMessage(message)
 
         //truncate message to a max of 1024 bytes
