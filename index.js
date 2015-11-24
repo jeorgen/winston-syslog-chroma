@@ -71,9 +71,9 @@ util._extend(SyslogTransport.prototype, {
         //wouldn't make a lot of sense anyway
         var messages = [];
 
-        var maxLength = 1024 - prepend.length;
+        var maxLength = 1024;
         while (message.length > maxLength) {
-            messages.push(prepend + message.substring(0, maxLength));
+            messages.push(message.substring(0, maxLength));
             message = message.substring(maxLength);
         }
 
