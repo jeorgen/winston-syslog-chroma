@@ -27,6 +27,21 @@ var messageTemplate = {
     "timestamp": 0.0,
     "level": 3}
 
+
+function escape (key, val) {
+    if (typeof(val)!="string") return val;
+    return val
+      .replace(/[\"]/g, '\\"')
+      .replace(/[\\]/g, '\\\\')
+      .replace(/[\/]/g, '\\/')
+      .replace(/[\b]/g, '\\b')
+      .replace(/[\f]/g, '\\f')
+      .replace(/[\n]/g, '\\n')
+      .replace(/[\r]/g, '\\r')
+      .replace(/[\t]/g, '\\t')
+    ; 
+}
+
 function formatMessage(message) {
     var gelf = new JOT(messageTemplate)
     gelf.merge({
@@ -36,7 +51,7 @@ function formatMessage(message) {
     })
 
     var cee =  {time: gelf.get('timestamp'), msg: gelf.getObject()}
-    return '@cee: ' + JSON.stringify(cee)
+    return '@cee: ' + JSON.stringify(cee, escape)
 }
 
 
