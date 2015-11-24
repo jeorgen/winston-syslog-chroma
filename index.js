@@ -63,13 +63,13 @@ util._extend(SyslogTransport.prototype, {
         // message = message.replace(/\u001b\[(\d+(;\d+)*)?m/g, '');
         message = formatMessage(message)
 
-        //truncate message to a max of 1024 bytes
+        //truncate message to a max of 20000 bytes
         //we'll just use characters though, because that's easier
         //plus splitting a 3-byte character into less than 3-bytes
         //wouldn't make a lot of sense anyway
         var messages = [];
 
-        var maxLength = 1024;
+        var maxLength = 20000;
         while (message.length > maxLength) {
             messages.push(message.substring(0, maxLength));
             message = message.substring(maxLength);
