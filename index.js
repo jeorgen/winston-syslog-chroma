@@ -2,7 +2,8 @@ var winston = require('winston'),
     util = require('util'),
     posix = require('posix'),
     os = require('os'),
-    JOT = require('javascript-object-templates');
+    JOT = require('javascript-object-templates'),
+    btoa = require('btoa');
 
 
 // var npmToSyslogLevels = { error: 3, warn: 4, info: 5, verbose: 6, debug: 7, silly: 7 }
