@@ -30,13 +30,6 @@ var messageTemplate = {
 }
 
 
-function escape(key, val) {
-    if (typeof(val) != "string") return val
-    return val
-        .replace(/[\n]/g, '#012')
-        .replace(/[\r]/g, '#015')
-}
-
 function formatMessage(short_message, full_message) {
     var gelf = new JOT(messageTemplate)
     gelf.merge({
@@ -49,7 +42,7 @@ function formatMessage(short_message, full_message) {
         time: gelf.get('timestamp'),
         msg: 'base64:' + btoa(gelfAsJSON)
     }
-    return '@cee: ' + JSON.stringify(cee, escape)
+    return '@cee: ' + JSON.stringify(cee)
 }
 
 
