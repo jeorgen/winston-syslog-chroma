@@ -47,7 +47,7 @@ function formatMessage(short_message, full_message) {
     var gelfAsJSON = JSON.stringify(gelf.getObject())
     var cee = {
         time: gelf.get('timestamp'),
-        msg: btoa(gelfAsJSON)
+        msg: 'base64:' + btoa(gelfAsJSON)
     }
     return '@cee: ' + JSON.stringify(cee, escape)
 }
