@@ -1,5 +1,6 @@
 var winston = require('winston'),
     util = require('util'),
+    util = require('os'),
     posix = require('posix'),
     os = require('os'),
     JOT = require('javascript-object-templates'),
@@ -26,7 +27,8 @@ var messageTemplate = {
     "short_message": "",
     "full_message": "",
     "timestamp": 0.0,
-    "level": 3
+    "level": 3,
+    "_sysinfo": [os.arch(), os.hostname(), os.platform(), os.release(), os.type()]
 }
 
 
