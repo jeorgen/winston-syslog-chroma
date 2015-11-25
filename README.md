@@ -22,7 +22,7 @@ var logger = new winston.Logger({
 ```
 
 ## Caveats
-This transport will cut up messages longer than 20K into multiple messages.
+This transport will transmitt messages up to the size of 20K.
 
 Also, `rsyslog` has a built-in rate limit of 200 messages over a period of 5 seconds
 from the same process. If you're doing more logging than that, you'll need to adjust
