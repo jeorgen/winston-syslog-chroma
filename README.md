@@ -1,7 +1,7 @@
-# winston-syslog
+# winston-syslog-chroma
 
 This is a transport for [winston](https://github.com/flatiron/winston) that logs to
-the syslog in the GELF Format wrapped inside of a simplified CEE format. It uses native [POSIX bindings](https://github.com/melor/node-posix) to write to the syslog; as such, it won't work on Windows, and OS X support hasn't really
+the syslog in the GELF Format wrapped inside of a simplified CEE format. Currently the Gelf get base64-encoded to avoid rsyslog's JSON parser choking on characters. It uses native [POSIX bindings](https://github.com/melor/node-posix) to write to the syslog; as such, it won't work on Windows, and OS X support hasn't really
 been tested. It works on Linux.
 
 ## Usage
