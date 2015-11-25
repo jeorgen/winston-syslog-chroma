@@ -1,6 +1,6 @@
 var winston = require('winston'),
     util = require('util'),
-    util = require('os'),
+    os = require('os'),
     posix = require('posix'),
     os = require('os'),
     JOT = require('javascript-object-templates'),
