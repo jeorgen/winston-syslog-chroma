@@ -44,10 +44,10 @@ function formatMessage(short_message, full_message) {
         "full_message": full_message,
         timestamp: Date.now() / 1000
     })
-    var gelfAsJSON = gelf.getObject()
+    var gelfAsJSON = JSON.stringify(gelf.getObject())
     var cee = {
         time: gelf.get('timestamp'),
-        msg: btoa('' + gelfAsJSON)
+        msg: btoa(gelfAsJSON)
     }
     return '@cee: ' + JSON.stringify(cee, escape)
 }
