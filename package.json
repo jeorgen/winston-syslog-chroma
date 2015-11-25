@@ -1,13 +1,13 @@
 {
-	"name": "winston-syslog",
+	"name": "winston-syslog-chroma",
 	"version": "0.1.0",
-	"description": "Syslog transport for winston",
+	"description": "Syslog transport for winston, based on winston-syslog by Tommy Montgomery",
 	"keywords": [ "syslog", "logging", "transport" ],
 
-	"author": "Tommy Montgomery <tmont@tmont.com> (http://tmont.com/)",
+	"author": "jorgen@webworks.se",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/tmont/winston-syslog.git"
+		"url": "https://github.com/jeorgen/winston-syslog-chroma.git"
 	},
 
 	"dependencies": {
