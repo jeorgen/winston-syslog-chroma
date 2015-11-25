@@ -36,17 +36,17 @@ function escape(key, val) {
         .replace(/[\r]/g, '#015')
 }
 
-function formatMessage(message) {
+function formatMessage(short_message, full_message) {
     var gelf = new JOT(messageTemplate)
     gelf.merge({
-        "short_message": message.substring(0, 20),
-        "full_message": message,
+        "short_message": short_message,
+        "full_message": full_message,
         timestamp: Date.now() / 1000
     })
 
     var cee = {
         time: gelf.get('timestamp'),
-        msg: gelf.getObject()
+        msg: btoa(gelf.getObject())
     }
     return '@cee: ' + JSON.stringify(cee, escape)
 }
@@ -90,7 +90,7 @@ util._extend(SyslogTransport.prototype, {
         }
 
         // message = message.replace(/\u001b\[(\d+(;\d+)*)?m/g, '');
-        message = formatMessage(message)
+        message = formatMessage(this.id, message)
 
         //truncate message to a max of 20000 bytes
         //we'll just use characters though, because that's easier
