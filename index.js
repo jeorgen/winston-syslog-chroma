@@ -28,7 +28,7 @@ var messageTemplate = {
     "full_message": "",
     "timestamp": 0.0,
     "level": 3,
-    "_sysinfo": [os.arch(), os.hostname(), os.platform(), os.release(), os.type()]
+    "_sysinfo": {pid:proces.pid, arch:os.arch(), hostname:os.hostname(), os_platform:os.platform(), os_release:os.release(), os_type:type:os.type()}
 }
 
 
