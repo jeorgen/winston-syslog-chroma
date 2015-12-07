@@ -8,7 +8,7 @@ been tested. It works on Linux.
 
 ```javascript
 var winston = require('winston'),
-	SyslogTransport = require('./winston-syslog');
+	SyslogTransport = require('./winston-syslog-chroma');
 
 var logger = new winston.Logger({
 	transports: [
