@@ -1,6 +1,6 @@
 {
 	"name": "winston-syslog-chroma",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Syslog transport for winston, based on winston-syslog by Tommy Montgomery",
 	"keywords": [ "syslog", "logging", "transport" ],
 
@@ -13,6 +13,7 @@
 	"dependencies": {
 		"winston": "",
 		"posix": "4.0.0",
-		"btoa": "1.1.2"
+		"btoa": "1.1.2",
+                "javascript-object-templates":"0.5.0" 
 	}
 }
